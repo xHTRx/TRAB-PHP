@@ -1,0 +1,116 @@
+<?php  require_once 'conexao.php'; ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Agendamento</title>
+</head>
+<body>
+    
+     <p>
+        <a href="index.php">Home</a> | 
+        <a href="clientes.php">Agenda</a>
+    </p>
+
+    <?php 
+    
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $nome = $_POST['nome'];
+            $cpf = $_POST['cpf'];
+            $telefone = $_POST['telefone'];
+            $procedimento = $_POST['procedimento'];
+            $data = $_POST['data'];
+            $hora = $_POST['hora'];
+            $id = $_POST['id'];
+
+
+            $conn = conectar_banco();
+
+            $sql = "UPDATE tb_horarios set nome = ?, cpf = ?, telefone = ?, procedimento = ?, dta = ?, hora = ?
+                    WHERE id = ?";
+
+            $stmt = mysqli_prepare($conn, $sql);
+
+            mysqli_stmt_bind_param($stmt, "ssssssi", $nome, $cpf, $telefone, $procedimento, $data, $hora, $id);
+
+            if(mysqli_stmt_execute($stmt)) {
+                echo "<h3>Agendamento editado com sucesso!</h3>";
+            } else {
+                echo "<h3>Erro ao editar.</h3>";
+            }
+
+            mysqli_stmt_close($stmt);
+
+            mysqli_close($conn);
+
+        } else {
+
+            
+            if (!isset($_GET['id'])) {
+                exit("<h3>ID não informado</h3>");
+            }
+
+            $id = (int) $_GET['id']; 
+
+            $conn = conectar_banco(); 
+
+            $query = "SELECT * FROM tb_horarios WHERE id = $id";
+
+            $resultado = mysqli_query($conn, $query);
+
+            
+            if (!mysqli_num_rows($resultado) > 0) {
+                
+                exit("<h3>Agendamento não localizado</h3>");
+            }
+
+            $agendamento= mysqli_fetch_assoc($resultado);
+            ?>
+
+                <h2>Editando Agendamento</h2>
+                <form action="editar.php" method="post">
+
+                    <label for="nome">Nome: </label><br>
+                    <input type="text" name="nome" id="nome" 
+                    value="<?php echo $agendamento['nome'];?>"><br><br>
+
+                    <label for="cpf">CPF: </label><br>
+                    <input type="text" name="cpf" id="cpf" 
+                    value="<?= $agendamento['cpf']; ?>"><br><br>
+
+                    <label for="telefone">Telefone: </label><br>
+                    <input type="tel" name="telefone" id="telefone" 
+                    value="<?= $agendamento['telefone']; ?>"><br><br>
+
+                    <label for="procedimento">Procedimento Estético: </label><br>
+                    <input type="text" name="procedimento" id="procedimento" 
+                    value="<?= $agendamento['procedimento']; ?>"><br><br>
+
+                    <label for="data">Data: </label><br>
+                    <input type="date" name="data" id="data" 
+                    value="<?= $agendamento['data']; ?>"><br><br>
+
+                    <label for="hora">Hora: </label><br>
+                    <input type="time" name="hora" id="hora" 
+                    value="<?= $agendamento['hora']; ?>"><br><br>
+
+
+                    <input type="hidden" name="id" value="<?= $agendamento['id']; ?>">
+
+
+                    <button type="submit">Editar</button>
+
+                </form>
+
+                <?php
+ 
+        }
+
+   
+    ?>
+    
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* style.css */
+
+/* Estilos Gerais do Corpo da Página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Um cinza bem claro do Bootstrap (light) */
+    color: #212529; /* Cor padrão de texto escuro do Bootstrap (dark) */
+    
+    /* Configurações da imagem de fundo */
+    /* Mantenha o caminho e o nome do arquivo da sua imagem de fundo. */
+    /* Exemplo: url('foto_fundo.png') se estiver na mesma pasta do CSS. */
+    background-image: url('foto fundo.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da viewport */
+}
+
+/* Customização de Cores para Botões do Bootstrap */
+/* Usando suas cores personalizadas para as classes de botão primárias do Bootstrap */
+.btn-primary {
+    background-color: #B31A45; /* Sua cor principal */
+    border-color: #B31A45;
+}
+.btn-primary:hover {
+    background-color: #9A153A; /* Hover para sua cor principal */
+    border-color: #9A153A;
+}
+
+/* Os outros botões já usam as cores padrão do Bootstrap, mas se quiser mantê-los explícitos */
+.btn-success { background-color: #28a745; border-color: #28a745; }
+.btn-success:hover { background-color: #218838; border-color: #1e7e34; }
+.btn-danger { background-color: #dc3545; border-color: #dc3545; }
+.btn-danger:hover { background-color: #c82333; border-color: #bd2130; }
+.btn-info { background-color: #17a2b8; border-color: #17a2b8; }
+.btn-info:hover { background-color: #138496; border-color: #117a8b; }
+.btn-secondary { background-color: #6c757d; border-color: #6c757d; }
+.btn-secondary:hover { background-color: #5a6268; border-color: #545b62; }
+.btn-outline-secondary { color: #6c757d; border-color: #6c757d; }
+.btn-outline-secondary:hover { color: #fff; background-color: #6c757d; border-color: #6c757d; }
+
+
+/* Estilos Específicos para Layouts que o Bootstrap não simplifica tanto */
+
+/* Formulário de Agendamento - Exemplo de uso de Grid CSS para layout complexo */
+/* Adaptei o seu '#pet-form' para ser um '#agendamento-form' ou apenas uma classe CSS genérica */
+/* Se você tiver um formulário com 'display: grid', mantenha estas regras */
+.form-grid-layout { /* Exemplo de nome de classe, use onde aplicar grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; /* Gap entre as colunas e linhas do grid */
+}
+
+/* Ocupa as duas colunas do grid (para botões, por exemplo) */
+.form-grid-layout .grid-span-2 {
+    grid-column: span 2;
+}
+
+/* Contêiner de Cards (Agendamentos/Clientes) */
+/* Para exibir agendamentos em cards, o CSS Grid é mais flexível que o Bootstrap aqui */
+.cards-container { /* Classe a ser aplicada na div pai dos cards de agendamento */
+    display: grid;
+    /* Faz os cards se ajustarem, com tamanho mínimo de 280px */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px; /* Espaçamento entre os cards */
+}
+
+
+/* Estilos do Modal (se você não usar o componente Modal do Bootstrap) */
+/* É altamente recomendado usar o Modal do Bootstrap para simplificar */
+/* Se for manter um modal customizado, este CSS é o mínimo necessário */
+.modal-custom { /* Classe para a div externa do seu modal customizado */
+    display: none; /* Escondido por padrão, JavaScript o mostra */
+    position: fixed; 
+    z-index: 1050; /* Z-index alto para ficar acima de outros elementos do Bootstrap */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex; /* Para centralizar o conteúdo */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-custom { /* Classe para o conteúdo interno do seu modal customizado */
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative; 
+}
+
+.close-button-custom { /* Classe para o botão de fechar do modal customizado */
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button-custom:hover,
+.close-button-custom:focus {
+    color: black;
+    text-decoration: none;
+}
