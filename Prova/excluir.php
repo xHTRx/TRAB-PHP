@@ -30,7 +30,8 @@ $id = (int)$_GET['id']; // Converte o ID para inteiro para segurança
 $conn = conectar_banco(); // Conecta ao banco de dados
         
 // PRIMEIRA VERIFICAÇÃO DE SEGURANÇA: Garante que o agendamento pertence ao usuário logado
-// Busca o agendamento para verificar a posse antes de excluir
+
+// O agendamento com este ID (?) pertence ao usuário que está tentando excluí-lo?
 $check_owner_sql = "SELECT usuario_id FROM tb_horarios WHERE id = ?";
 $stmt_owner = mysqli_prepare($conn, $check_owner_sql);
 mysqli_stmt_bind_param($stmt_owner, "i", $id);

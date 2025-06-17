@@ -17,10 +17,12 @@ function conectar_banco(){
     $usuario = "root";
     $senha = "";
     $banco = "bd_clinica";
-    $port = 3307; // A porta que você configurou no seu XAMPP/WAMP (ou a padrão 3306)
+    
+    // // Tenta estabelecer a conexão com o banco de dados usando mysqli_connect
+    // // Inclui a porta explicitamente
+    // $conn = mysqli_connect($servidor, $usuario, $senha, $banco);
 
-    // Tenta estabelecer a conexão com o banco de dados usando mysqli_connect
-    // Inclui a porta explicitamente
+    $port = 3307; // minha porta
     $conn = mysqli_connect($servidor, $usuario, $senha, $banco, $port);
 
     // Verifica se a conexão foi bem-sucedida

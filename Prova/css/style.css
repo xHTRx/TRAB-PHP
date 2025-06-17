@@ -15,17 +15,130 @@ body {
     background-repeat: no-repeat; 
     background-attachment: fixed; 
 
-    min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura total da viewport */
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
 }
 
-/* Customização de Cores para Botões do Bootstrap */
-/* Usando suas cores personalizadas para as classes de botão primárias do Bootstrap */
+#h1_titulo{
+    color: #212529;
+}
+
+#p_titulo{
+    color: #7a0b2a;
+    font-weight: 500;
+}
+
+
+
+
+/* --- CLASSE EXCLUSIVA PARA O FORMULÁRIO DE AGENDAMENTO --- */
+.agendamento-glass-form {
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo branco com 15% de opacidade */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidade WebKit */
+    
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* MUDANÇA AQUI: Cor do texto principal dentro do formulário para cinza escuro */
+    color: #343a40; /* Um cinza bem escuro do Bootstrap (dark) */
+}
+
+.agendamento-glass-form label {
+    /* MUDANÇA AQUI: Labels cinza escuro */
+    color: #343a40; 
+}
+
+.agendamento-glass-form .form-control {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* MUDANÇA AQUI: Cor do texto digitado nos inputs para cinza escuro */
+    color: #343a40; 
+}
+
+.agendamento-glass-form .form-control::placeholder {
+    /* MUDANÇA AQUI: Placeholder cinza escuro, um pouco mais transparente */
+    color: rgba(52, 58, 64, 0.8); /* Usando o #343a40 com 80% de opacidade */
+}
+
+.agendamento-glass-form .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.4);
+    /* MUDANÇA AQUI: Mantém a cor do texto cinza escuro ao focar */
+    color: #343a40; 
+}
+
+/* Estilos para os títulos dentro do form */
+.agendamento-glass-form h2 {
+    /* MUDANÇA AQUI: Título "Novo Agendamento" cinza escuro */
+    color: #343a40; 
+}
+
+
+
+
+/* --- CLASSE EXCLUSIVA PARA A TABELA DE AGENDAMENTOS COM EFEITO VIDRO FOSCO --- */
+.agendamentos-table-glass {
+    background-color: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    
+    border-radius: 15px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    
+    width: 100%; 
+    border-collapse: collapse; 
+    overflow: hidden; 
+    margin-top: 20px; 
+}
+
+.agendamentos-table-glass thead {
+    background-color: rgba(255, 255, 255, 0.25); 
+}
+
+.agendamentos-table-glass th,
+.agendamentos-table-glass td {
+    padding: 12px 15px; 
+    text-align: left; 
+    color: #343a40; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.agendamentos-table-glass tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05); 
+}
+
+.agendamentos-table-glass tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.agendamentos-table-glass a {
+    
+    text-decoration: none;
+}
+.agendamentos-table-glass a:hover {
+    text-decoration: underline;
+}
+
+
+.container h1, .container p {
+    color: #ffffff; 
+}
+
 .btn-primary {
-    background-color: #B31A45; /* Sua cor principal */
+    background-color: #B31A45;
     border-color: #B31A45;
 }
 .btn-primary:hover {
-    background-color: #9A153A; /* Hover para sua cor principal */
+    background-color: #9A153A;
     border-color: #9A153A;
 }
 

@@ -17,7 +17,7 @@ require_once 'includes/funcoes.php'; // Inclui as funções utilitárias (para g
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário - Clínica Camil</title>
-    <!-- CORREÇÃO AQUI: Removidos os colchetes [] do link do Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css"> 
 </head>
@@ -61,7 +61,7 @@ require_once 'includes/funcoes.php'; // Inclui as funções utilitárias (para g
             </div>
         </div>
     </div>
-    <!-- CORREÇÃO AQUI: Removidos os colchetes [] do link do Bootstrap JS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -30,8 +30,10 @@ proteger_pagina(); // Chama a função para proteger esta página. Se não estiv
 
     <div class="container mt-5">
         <div class="text-center mb-4">
-            <h1>Agenda de Datas e Horas - Clínica Camil</h1>
-            <p>Bem-vindo(a), <?php echo htmlspecialchars($_SESSION['usuario_login'] ?? 'Usuário'); ?>!</p>
+            
+                <h1 id="h1_titulo">Agenda de Datas e Horas - Clínica Camil</h1>
+            
+            <p id="p_titulo">Bem-vindo(a), <?php echo htmlspecialchars($_SESSION['usuario_login'] ?? 'Usuário'); ?>!</p>
             <a href="clientes.php" class="btn btn-info mt-3">Ver Meus Agendamentos</a>
             <a href="logout.php" class="btn btn-danger mt-3">Logout</a>
         </div>
@@ -41,7 +43,7 @@ proteger_pagina(); // Chama a função para proteger esta página. Se não estiv
         echo get_mensagem(); 
         ?>
 
-        <form action="salvarDB.php" method="post" class="p-4 border rounded shadow-sm">
+        <form action="salvarDB.php" method="post" class="agendamento-glass-form">
             <h2 class="mb-4">Novo Agendamento</h2>
             <div class="row">
                 <div class="col-md-6">

@@ -21,14 +21,14 @@ proteger_pagina(); // Protege esta página. Se não estiver logado, redireciona.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Agendamentos</title>
-    <!-- CORREÇÃO AQUI: Removidos os colchetes [] do link do Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body> 
     <div class="container mt-5">
         <div class="text-center mb-4">
-            <h1>Meus Agendamentos</h1>
+            <h1 id="h1_titulo">Meus Agendamentos</h1>
             <p>
                 <a href="home.php" class="btn btn-secondary">Voltar para Agendamento</a>
                 <a href="logout.php" class="btn btn-danger">Logout</a>
@@ -50,7 +50,7 @@ proteger_pagina(); // Protege esta página. Se não estiver logado, redireciona.
         if (!$stmt) {
             set_mensagem('erro', 'Erro ao preparar a consulta de agendamentos: ' . mysqli_error($conn));
             error_log("Erro ao preparar select de agendamentos: " . mysqli_error($conn));
-            // Não 'exit' aqui, apenas não exibe a tabela
+            
         } else {
             mysqli_stmt_bind_param($stmt, "i", $usuario_id); // Vincula o ID do usuário
             mysqli_stmt_execute($stmt); // Executa a consulta
@@ -61,7 +61,7 @@ proteger_pagina(); // Protege esta página. Se não estiver logado, redireciona.
                 echo "<h3>Não há agendamentos cadastrados por você.</h3>";
             } else {
                 // Se houver resultados, constrói a tabela
-                echo '<table class="table table-striped table-hover">';
+                echo '<table class="agendamentos-table-glass">';
                 echo "<thead><tr>";
                 echo "<th>ID #</th>";
                 echo "<th>Nome</th>";
@@ -97,7 +97,7 @@ proteger_pagina(); // Protege esta página. Se não estiver logado, redireciona.
         ?>
     </div>
 
-    <!-- CORREÇÃO AQUI: Removidos os colchetes [] do link do Bootstrap JS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
