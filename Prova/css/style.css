@@ -3,12 +3,10 @@
 /* Estilos Gerais do Corpo da Página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Um cinza bem claro do Bootstrap (light) */
-    color: #212529; /* Cor padrão de texto escuro do Bootstrap (dark) */
+    background-color: #f8f9fa; 
+    color: #212529; 
     
     /* Configurações da imagem de fundo */
-    /* Mantenha o caminho e o nome do arquivo da sua imagem de fundo. */
-    /* Exemplo: url('foto_fundo.png') se estiver na mesma pasta do CSS. */
     background-image: url('foto fundo.png'); 
     background-size: cover; 
     background-position: center; 
@@ -46,24 +44,24 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
 
-    /* MUDANÇA AQUI: Cor do texto principal dentro do formulário para cinza escuro */
-    color: #343a40; /* Um cinza bem escuro do Bootstrap (dark) */
+ 
+    color: #343a40; 
 }
 
 .agendamento-glass-form label {
-    /* MUDANÇA AQUI: Labels cinza escuro */
+
     color: #343a40; 
 }
 
 .agendamento-glass-form .form-control {
     background-color: rgba(255, 255, 255, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    /* MUDANÇA AQUI: Cor do texto digitado nos inputs para cinza escuro */
+
     color: #343a40; 
 }
 
 .agendamento-glass-form .form-control::placeholder {
-    /* MUDANÇA AQUI: Placeholder cinza escuro, um pouco mais transparente */
+
     color: rgba(52, 58, 64, 0.8); /* Usando o #343a40 com 80% de opacidade */
 }
 
@@ -71,13 +69,12 @@ body {
     background-color: rgba(255, 255, 255, 0.35);
     border-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.4);
-    /* MUDANÇA AQUI: Mantém a cor do texto cinza escuro ao focar */
+
     color: #343a40; 
 }
 
 /* Estilos para os títulos dentro do form */
 .agendamento-glass-form h2 {
-    /* MUDANÇA AQUI: Título "Novo Agendamento" cinza escuro */
     color: #343a40; 
 }
 
@@ -142,7 +139,7 @@ body {
     border-color: #9A153A;
 }
 
-/* Os outros botões já usam as cores padrão do Bootstrap, mas se quiser mantê-los explícitos */
+
 .btn-success { background-color: #28a745; border-color: #28a745; }
 .btn-success:hover { background-color: #218838; border-color: #1e7e34; }
 .btn-danger { background-color: #dc3545; border-color: #dc3545; }
@@ -158,9 +155,7 @@ body {
 /* Estilos Específicos para Layouts que o Bootstrap não simplifica tanto */
 
 /* Formulário de Agendamento - Exemplo de uso de Grid CSS para layout complexo */
-/* Adaptei o seu '#pet-form' para ser um '#agendamento-form' ou apenas uma classe CSS genérica */
-/* Se você tiver um formulário com 'display: grid', mantenha estas regras */
-.form-grid-layout { /* Exemplo de nome de classe, use onde aplicar grid */
+.form-grid-layout { 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px; /* Gap entre as colunas e linhas do grid */
@@ -172,7 +167,6 @@ body {
 }
 
 /* Contêiner de Cards (Agendamentos/Clientes) */
-/* Para exibir agendamentos em cards, o CSS Grid é mais flexível que o Bootstrap aqui */
 .cards-container { /* Classe a ser aplicada na div pai dos cards de agendamento */
     display: grid;
     /* Faz os cards se ajustarem, com tamanho mínimo de 280px */
@@ -181,11 +175,8 @@ body {
 }
 
 
-/* Estilos do Modal (se você não usar o componente Modal do Bootstrap) */
-/* É altamente recomendado usar o Modal do Bootstrap para simplificar */
-/* Se for manter um modal customizado, este CSS é o mínimo necessário */
-.modal-custom { /* Classe para a div externa do seu modal customizado */
-    display: none; /* Escondido por padrão, JavaScript o mostra */
+.modal-custom { 
+    display: none; 
     position: fixed; 
     z-index: 1050; /* Z-index alto para ficar acima de outros elementos do Bootstrap */
     left: 0;

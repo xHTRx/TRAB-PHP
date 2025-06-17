@@ -61,7 +61,7 @@ $usuario_id_logado = $_SESSION['usuario_id'];
 
             $conn = conectar_banco();
 
-            // PRIMEIRA VERIFICAÇÃO DE SEGURANÇA: Garante que o agendamento pertence ao usuário logado
+            // VERIFICAÇÃO DE SEGURANÇA: Garante que o agendamento pertence ao usuário logado
             $check_owner_sql = "SELECT usuario_id FROM tb_horarios WHERE id = ?";
             $stmt_owner = mysqli_prepare($conn, $check_owner_sql);
             mysqli_stmt_bind_param($stmt_owner, "i", $id);
@@ -110,7 +110,7 @@ $usuario_id_logado = $_SESSION['usuario_id'];
             $id = (int) $_GET['id'];
             $conn = conectar_banco();
 
-            // PRIMEIRA VERIFICAÇÃO DE SEGURANÇA: Garante que o agendamento pertence ao usuário logado
+            // VERIFICAÇÃO DE SEGURANÇA: Garante que o agendamento pertence ao usuário logado
             $query_agendamento = "SELECT id, nome, cpf, telefone, procedimento, dta, hora FROM tb_horarios WHERE id = ? AND usuario_id = ?";
             $stmt_agendamento = mysqli_prepare($conn, $query_agendamento);
             

@@ -24,7 +24,6 @@ if (form_nao_enviado()) {
 }
 
 // Define os campos obrigatórios para o agendamento
-// O campo 'cpf' pode ser removido daqui se não for estritamente obrigatório no seu formulário
 $campos_obrigatorios_agendamento = ['nome', 'telefone', 'procedimento', 'data', 'hora'];
 
 // Valida se todos os campos obrigatórios estão preenchidos
@@ -36,7 +35,7 @@ if (ha_campos_em_branco($_POST, $campos_obrigatorios_agendamento)) {
 
 // Obtém os dados do formulário
 $nome = $_POST['nome'] ?? '';
-$cpf = $_POST['cpf'] ?? ''; // CPF pode ser opcional ou vazio
+$cpf = $_POST['cpf'] ?? ''; 
 $telefone = $_POST['telefone'] ?? '';
 $procedimento = $_POST['procedimento'] ?? '';
 $data = $_POST['data'] ?? '';

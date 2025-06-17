@@ -29,7 +29,7 @@ if (!isset($_GET['id'])) {
 $id = (int)$_GET['id']; // Converte o ID para inteiro para segurança
 $conn = conectar_banco(); // Conecta ao banco de dados
         
-// PRIMEIRA VERIFICAÇÃO DE SEGURANÇA: Garante que o agendamento pertence ao usuário logado
+// VERIFICAÇÃO DE SEGURANÇA: Garante que o agendamento pertence ao usuário logado
 
 // O agendamento com este ID (?) pertence ao usuário que está tentando excluí-lo?
 $check_owner_sql = "SELECT usuario_id FROM tb_horarios WHERE id = ?";

@@ -19,17 +19,19 @@ function conectar_banco(){
     $banco = "bd_clinica";
     
     // // Tenta estabelecer a conexão com o banco de dados usando mysqli_connect
-    // // Inclui a porta explicitamente
+
     // $conn = mysqli_connect($servidor, $usuario, $senha, $banco);
 
-    $port = 3307; // minha porta
+
+    $port = 3307; // PORTA DO SERVIDOR   <<----------  ALTERE SE NECESSÁRIO  ---------->>
     $conn = mysqli_connect($servidor, $usuario, $senha, $banco, $port);
+
 
     // Verifica se a conexão foi bem-sucedida
     if (!$conn) {
         // Registra o erro em um log do servidor (útil para depuração)
         error_log("Erro de conexão com o banco de dados: " . mysqli_connect_error());
-        // Encerra a execução e exibe uma mensagem amigável ao usuário
+        // Encerra a execução e exibe uma mensagem 
         exit("<h2>Erro de Conexão</h2><p>Não foi possível conectar ao banco de dados. Por favor, tente novamente mais tarde.</p>");
     }
     
