@@ -1,6 +1,6 @@
 # Nome dos integrantes:
 - Heitor Auagusto Andrade
-- Jhanny
+- Jhanny Aparecida Rebeiko Pianovski
 ## Tema Escolhido: Sistema Interno de Gestão de Agendamentos para Clínica de Estética
 
 O projeto desenvolve um Sistema Interno de Gestão de Agendamentos, feito especificamente para atender às necessidades de uma clínica de estética que precisem otimizar e controlar seus horários de serviço de forma eficiente. A ferramenta visa centralizar as informações de horários, permitindo que a equipe interna realize cadastros, visualize, edite e exclua agendamentos de forma segura e organizada, otimizando o fluxo de trabalho e o atendimento ao público.
